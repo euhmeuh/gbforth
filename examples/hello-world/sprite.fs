@@ -14,8 +14,8 @@ _OAM 1 + constant player.x
 _OAM 2 + constant player.tile
 _OAM 3 + constant player.opts
 
-: playerX+! player.x wait-lcd +! ;
-: playerY+! player.y wait-lcd +! ;
+: playerX+! player.x lcd-wait-vblank +! ;
+: playerY+! player.y lcd-wait-vblank +! ;
 
 : handle-input
   begin
@@ -25,8 +25,8 @@ _OAM 3 + constant player.opts
       dup k-left  and if -1 playerX+! then
       dup k-up    and if -1 playerY+! then
       dup k-down  and if  1 playerY+! then
-      dup k-a     and if  1 player.tile wait-lcd c! then
-      dup k-b     and if  2 player.tile wait-lcd c! then
+      dup k-a     and if  1 player.tile lcd-wait-vblank c! then
+      dup k-b     and if  2 player.tile lcd-wait-vblank c! then
       \ If there no key pressed, wait for one
       0= if halt then
     then
@@ -53,9 +53,9 @@ _OAM 3 + constant player.opts
   _OAM [ 40 4 * ]L erase
   enable-sprites
 
-  #1 player.tile wait-lcd c!
-  %00000000 player.opts wait-lcd c!
-  #80 player.y wait-lcd c!
-  #50 player.x wait-lcd c!
+  #1 player.tile lcd-wait-vblank c!
+  %00000000 player.opts lcd-wait-vblank c!
+  #80 player.y lcd-wait-vblank c!
+  #50 player.x lcd-wait-vblank c!
 
   handle-input ;
