@@ -24,7 +24,7 @@ all: examples
 examples: \
 	examples/hello-world-asm/hello.gb \
 	examples/hello-world/hello.gb \
-	examples/hello-world/sprite.gb \
+	examples/sprite-demo/sprite-demo.gb \
 	examples/happy-birthday/happy-birthday.gb \
 	examples/sokoban/sokoban.gb \
 	examples/simon/simon.gb \
@@ -48,7 +48,7 @@ tests: $(TEST_OBJS)
 clean:
 	-rm -f examples/hello-world-asm/hello.gb
 	-rm -f examples/hello-world/hello.gb
-	-rm -f examples/hello-world/sprite.gb
+	-rm -f examples/sprite-demo/sprite-demo.gb
 	-rm -f examples/happy-birthday/happy-birthday.gb
 	-rm -f examples/sokoban/sokoban.gb
 	-rm -f examples/simon/simon.gb
