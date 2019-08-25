@@ -9,6 +9,7 @@
 - music.fs
 - [random.fs](./libs/random.md)
 - [sfx.fs](./libs/sfx.md)
+- [stack.fs](./libs/stack.md)
 - [term.fs](./libs/term.md)
 - [tester.fs](./libs/tester.md)
 - [time.fs](./libs/time.md)
