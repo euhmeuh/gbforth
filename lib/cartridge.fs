@@ -93,3 +93,10 @@ $33 constant USE_MAKER_CODE
   $dc c, $cc c, $6e c, $e6 c, $dd c, $dd c, $d9 c, $99 c,
   $bb c, $bb c, $67 c, $63 c, $6e c, $0e c, $ec c, $cc c,
   $dd c, $dc c, $99 c, $9f c, $bb c, $b9 c, $33 c, $3e c, ;
+
+[asm]
+:m vblank:
+  rom here
+  $0040 ==> ' # call, reti,
+  ==> ;
+ [endasm]
